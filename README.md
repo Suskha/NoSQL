@@ -14,35 +14,35 @@ Performing manual check on each index with hint and execution statistics on abov
 
 1.firstNumber_1_secondNumber_1
 
-	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('firstNumber_1_secondNumber_1').explain('executionStats')
+	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('firstNumber_1_secondNumber_1').explain()
 
 *Query Execution Time for Random data: 121ms*
 *Query Execution Time for Arranged data: 110ms*
 
 2.firstNumber_1_thirdNumber_1
 
-	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('firstNumber_1_thirdNumber_1').explain('executionStats')
+	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('firstNumber_1_thirdNumber_1').explain()
 	
 *Query Execution Time for Random data : 127ms*
 *Query Execution Time for Arranged data: 168ms*
 
 3.thirdNumber_1
 
-	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('thirdNumber_1').explain('executionStats')
+	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('thirdNumber_1').explain()
 
 *Query Execution Time for Random data : 49ms*
 *Query Execution Time for Arranged data: 216ms*
 
 4.firstNumber_1_secondNumber_1_thirdNumber_-1
 
-	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('firstNumber_1_secondNumber_1_thirdNumber_-1').explain('executionStats')
+	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('firstNumber_1_secondNumber_1_thirdNumber_-1').explain()
 
 *Query Execution Time for Random data : 109ms*
 *Query Execution Time for Arranged data: 101ms*
 
 5._id_
 
-	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('_id_').explain('executionStats')
+	db.stuff.find({'firstNumber':{'$lt':10000}, 'secondNumber':{'$gt': 5000}}, {'firstNumber':1, 'thirdNumber':1}).sort({'thirdNumber':-1}).hint('_id_').explain()
 
 *Query Execution TIme for Random data : 148ms*
 *Query Execution Time for Arranged data: 183ms*
